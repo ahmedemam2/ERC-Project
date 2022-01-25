@@ -2,7 +2,7 @@
     $server = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "testing";
+    $dbname = "ercok";
 
         $link = mysqli_connect($server, $username, $password, $dbname);
         if ($link){

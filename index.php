@@ -32,18 +32,34 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">id</th>
-      <th scope="col">address</th>
-      <th scope="col">gender</th>
-      <th scope="col">age</th>
-      <th scope="col">Name</th>
+      <th scope="col">bloodtype</th>
+      <th scope="col">stock</th>
     </tr>
   </thead>
   <tbody>
       
       
       <?php
-      $sql="SELECT * FROM testingg";
+      $sql="SELECT * FROM customizedreport WHERE id=1";
       $res=mysqli_query($link, $sql);
+      if(mysqli_num_rows($res)>0)
+      {
+          $i=1; 
+          while($row=mysqli_fetch_array($res))
+          {
+
+
+                  $sql2=  $row['SQL'];
+                  echo($sql2);
+
+          }
+          
+      } else {
+          echo("no data found");
+      }
+      $sql3; $sql3+=$sql2;
+       $res=mysqli_query($link, $sql3);
+       echo($res);
       if(mysqli_num_rows($res)>0)
       {
           $i=1; 
@@ -52,11 +68,11 @@
               ?>
                <tr>
                   <th scope="row"><?php echo $i++; ?></th>
+
                   <td><?php echo $row['id']?></td>
-                  <td><?php echo $row['address']?></td>
-                  <td><?php echo $row['gender']?></td>
-                  <td><?php echo $row['age']?></td>
-                  <td><?php echo $row['Name']?></td>
+                  <td><?php echo $row['bloodtype']?></td>
+                  <td><?php echo $row['stock']?></td>
+                  
                   <td></td>
                   <td></td>
                </tr>
